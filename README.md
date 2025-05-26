@@ -29,40 +29,40 @@ const App = () => {
 export default App;
 ```
 
-## Configuration
+## Configuración
 
-The `ChatWidget` component requires a configuration object to be passed via the `config` prop. This object should conform to the `ChatWidgetConfig` interface.
+El componente `ChatWidget` requiere que se pase un objeto de configuración a través de la prop `config`. Este objeto debe cumplir con la interfaz `ChatWidgetConfig`.
 
-### `ChatWidgetConfig` Interface
+### Interfaz `ChatWidgetConfig`
 
 ```typescript
 export interface ChatWidgetConfig {
-  langGraphApiUrl: string;    // Required: The URL of your LangGraph API endpoint.
-  assistantId: string;        // Required: The Assistant ID or Graph ID for LangGraph.
-  langSmithApiKey?: string;   // Optional: Your LangSmith API key, if needed for tracing or other LangSmith features.
-  audioApiUrl?: string;       // Optional: The URL for your audio transcription API.
+  langGraphApiUrl: string;    // Requerido: La URL de tu punto de conexión API de LangGraph.
+  assistantId: string;        // Requerido: El ID del Asistente o ID del Grafo para LangGraph.
+  langSmithApiKey?: string;   // Opcional: Tu clave API de LangSmith, si es necesaria para el rastreo u otras características de LangSmith.
+  audioApiUrl?: string;       // Opcional: La URL de tu API de transcripción de audio.
 }
 ```
 
-### Example Usage
+### Ejemplo de Uso
 
-To use the `ChatWidget`, import it and provide the necessary configuration:
+Para usar el `ChatWidget`, impórtalo y proporciona la configuración necesaria:
 
 ```tsx
 import React from 'react';
-import { ChatWidget, ChatWidgetConfig } from 'xcala-chat-widget'; // Adjust import path as necessary
+import { ChatWidget, ChatWidgetConfig } from 'xcala-chat-widget'; // Ajusta la ruta de importación según sea necesario
 
 const App = () => {
   const chatConfig: ChatWidgetConfig = {
-    langGraphApiUrl: "https://your-langgraph-api-url.com/endpoint",
-    assistantId: "your-assistant-or-graph-id",
-    langSmithApiKey: "your-optional-langsmith-api-key",
-    audioApiUrl: "https://your-audio-api-url.com/endpoint" // Si es necesario
+    langGraphApiUrl: "https://tu-api-langgraph.com/endpoint",
+    assistantId: "tu-id-asistente-o-grafo",
+    langSmithApiKey: "tu-clave-api-opcional-langsmith",
+    audioApiUrl: "https://tu-api-audio.com/endpoint" // Si es necesario
   };
 
   return (
     <div>
-      {/* Other application content */}
+      {/* Otro contenido de la aplicación */}
       <ChatWidget config={chatConfig} />
     </div>
   );
@@ -71,7 +71,7 @@ const App = () => {
 export default App;
 ```
 
-Make sure to replace the placeholder values with your actual LangGraph API URL, Assistant/Graph ID, and LangSmith API Key (if applicable).
+Asegúrate de reemplazar los valores de ejemplo con la URL real de tu API de LangGraph, el ID de Asistente/Grafo y la clave API de LangSmith (si aplica).
 
 ## Desarrollo
 
@@ -81,7 +81,7 @@ Para construir el paquete para producción:
 npm run build
 ```
 
-Para desarrollar en modo watch (recompila automáticamente al guardar cambios):
+Para desarrollar en modo de observación (recompila automáticamente al guardar cambios):
 
 ```bash
 npm run dev
